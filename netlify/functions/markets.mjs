@@ -155,7 +155,7 @@ function parseCsv(text) {
 
 async function fetchFred(series) {
   const url = `https://fred.stlouisfed.org/graph/fredgraph.csv?id=${series}`;
-  const rows = parseCsv(await fetchText(url, { accept: "text/csv,*/*" }));
+  const rows = parseCsv(await fetchText(url, { accept: "text/csv,*/*" }, 18000));
   const valid = rows
     .map((row) => [row.observation_date, toFloat(row[series])])
     .filter(([, value]) => value !== null);
