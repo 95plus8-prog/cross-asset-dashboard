@@ -408,12 +408,12 @@ class Handler(SimpleHTTPRequestHandler):
 
 def run_server(port: int) -> None:
     DASHBOARD_DIR.mkdir(exist_ok=True)
-    if not (DASHBOARD_DIR / "index.html").exists():
-        raise SystemExit("缺少 cross_asset_dashboard/index.html")
+    if not (ROOT / "index.html").exists():
+        raise SystemExit("缺少 index.html")
     build_snapshot()
     socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("127.0.0.1", port), Handler) as httpd:
-        print(f"跨资产仪表盘已启动: http://127.0.0.1:{port}/cross_asset_dashboard/")
+        print(f"跨资产仪表盘已启动: http://127.0.0.1:{port}/")
         print("按 Ctrl+C 停止。")
         httpd.serve_forever()
 

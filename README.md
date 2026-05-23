@@ -23,7 +23,7 @@ python3 cross_asset_dashboard.py
 打开：
 
 ```text
-http://127.0.0.1:8765/cross_asset_dashboard/
+http://127.0.0.1:8765/
 ```
 
 ## 本地生成一次静态数据
