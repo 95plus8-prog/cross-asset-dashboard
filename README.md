@@ -35,6 +35,16 @@ cp cross_asset_dashboard/market_snapshot.json market_snapshot.json
 
 GitHub Pages 读取根目录的 `market_snapshot.json`。本仓库已经配置 GitHub Actions，会定时抓取数据并更新这个文件。
 
+## Netlify 部署
+
+本仓库包含 `netlify.toml` 和 `netlify/functions/markets.mjs`。部署到 Netlify 后，页面会优先请求：
+
+```text
+/api/markets
+```
+
+这个 Netlify Function 会实时抓取 CNBC、CNN 和 FRED 数据；如果函数不可用，页面会回退读取静态 `market_snapshot.json`。
+
 ## 部署到 GitHub Pages
 
 1. 在 GitHub 创建一个新仓库，例如 `cross-asset-dashboard`。
