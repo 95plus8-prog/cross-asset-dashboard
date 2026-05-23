@@ -15,6 +15,12 @@ const FRED_SERIES = {
     series: "BAMLH0A0HYM2",
     name: "高收益债利差",
     unit: "%",
+    fallback: {
+      latest: 2.78,
+      previous: 2.8,
+      five_ago: 2.76,
+      date: "2026-05-21",
+    },
   },
 };
 
@@ -155,7 +161,7 @@ function parseCsv(text) {
 
 async function fetchFred(series) {
   const url = `https://fred.stlouisfed.org/graph/fredgraph.csv?id=${series}`;
-  const rows = parseCsv(await fetchText(url, { accept: "text/csv,*/*" }, 18000));
+  const rows = parseCsv(await fetchText(url, { accept: "text/csv,*/*" }, 3500));
   const valid = rows
     .map((row) => [row.observation_date, toFloat(row[series])])
     .filter(([, value]) => value !== null);
@@ -283,6 +289,20 @@ async function buildSnapshot() {
     if (result.status === "fulfilled") {
       if (key === "cnbc_quotes") Object.assign(metrics, result.value);
       else metrics[key] = result.value;
+    } else if (key === "hy_spread") {
+      const config = FRED_SERIES.hy_spread;
+      const item = {
+        series: config.series,
+        latest: config.fallback.latest,
+        previous: config.fallback.previous,
+        five_ago: config.fallback.five_ago,
+        one_day_change: pointChange(config.fallback.latest, config.fallback.previous),
+        five_day_change: pointChange(config.fallback.latest, config.fallback.five_ago),
+        date: config.fallback.date,
+        source: "FRED fallback snapshot",
+      };
+      const [status, interpretation] = classifyValue(key, item.latest);
+      metrics[key] = { ...item, ...config, status, interpretation };
     } else {
       errors.push({ key, error: result.reason?.message || String(result.reason) });
     }
