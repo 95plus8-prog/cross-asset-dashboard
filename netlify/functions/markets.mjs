@@ -39,14 +39,17 @@ function pointChange(now, old) {
   return now - old;
 }
 
-async function fetchText(url, headers = {}) {
+async function fetchText(url, headers = {}, timeoutMs = 9000) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
   const res = await fetch(url, {
+    signal: controller.signal,
     headers: {
       "user-agent": UA,
       accept: "application/json,text/plain,*/*",
       ...headers,
     },
-  });
+  }).finally(() => clearTimeout(timeout));
   if (!res.ok) {
     throw new Error(`${res.status} ${res.statusText} from ${url}`);
   }
@@ -262,27 +265,28 @@ async function buildSnapshot() {
   const metrics = {};
   const errors = [];
 
-  try {
-    Object.assign(metrics, await fetchCnbcQuotes());
-  } catch (error) {
-    errors.push({ key: "cnbc_quotes", error: error.message });
-  }
+  const jobs = [
+    ["cnbc_quotes", fetchCnbcQuotes()],
+    ["fear_greed", fetchFearGreed()],
+    ...Object.entries(FRED_SERIES).map(([key, config]) => [
+      key,
+      fetchFred(config.series).then((item) => {
+        const [status, interpretation] = classifyValue(key, item.latest);
+        return { ...item, ...config, status, interpretation };
+      }),
+    ]),
+  ];
 
-  try {
-    metrics.fear_greed = await fetchFearGreed();
-  } catch (error) {
-    errors.push({ key: "fear_greed", error: error.message });
-  }
-
-  for (const [key, config] of Object.entries(FRED_SERIES)) {
-    try {
-      const item = await fetchFred(config.series);
-      const [status, interpretation] = classifyValue(key, item.latest);
-      metrics[key] = { ...item, ...config, status, interpretation };
-    } catch (error) {
-      errors.push({ key, error: error.message });
+  const results = await Promise.allSettled(jobs.map(([, job]) => job));
+  jobs.forEach(([key], index) => {
+    const result = results[index];
+    if (result.status === "fulfilled") {
+      if (key === "cnbc_quotes") Object.assign(metrics, result.value);
+      else metrics[key] = result.value;
+    } else {
+      errors.push({ key, error: result.reason?.message || String(result.reason) });
     }
-  }
+  });
 
   if (metrics.spy && metrics.rsp) addRatio(metrics, "rsp_spy", "rsp", "spy", "RSP/SPY 市场广度");
   if (metrics.spy && metrics.iwm) addRatio(metrics, "iwm_spy", "iwm", "spy", "IWM/SPY 风险扩散");
