@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T16:36:27.347055+00:00",
+  "generated_at": "2026-05-30T20:34:58.146150+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -168,6 +168,20 @@
       "status": "hot",
       "interpretation": "偏贪婪"
     },
+    "hy_spread": {
+      "series": "BAMLH0A0HYM2",
+      "latest": 2.72,
+      "previous": 2.71,
+      "five_ago": 2.78,
+      "one_day_change": 0.010000000000000231,
+      "five_day_change": -0.05999999999999961,
+      "date": "2026-05-28",
+      "source": "FRED",
+      "name": "高收益债利差",
+      "unit": "%",
+      "status": "neutral",
+      "interpretation": "信用压力低"
+    },
     "rsp_spy": {
       "name": "RSP/SPY 市场广度",
       "latest": 0.27605488578680204,
@@ -200,12 +214,7 @@
     ],
     "positives": []
   },
-  "errors": [
-    {
-      "key": "hy_spread",
-      "error": "HTTP Error 504: Gateway Time-out"
-    }
-  ],
+  "errors": [],
   "notes": [
     "所有行情仅用于监测和辅助判断，不构成投资建议。",
     "Yahoo/CNN/FRED/Stooq 等公共数据源可能延迟或短暂不可用。",
