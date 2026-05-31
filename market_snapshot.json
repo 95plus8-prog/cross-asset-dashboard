@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T08:25:21.656440+00:00",
+  "generated_at": "2026-05-31T13:02:59.664266+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -71,20 +71,20 @@
     },
     "hyg": {
       "symbol": "HYG",
-      "latest": null,
-      "previous": null,
+      "latest": 80.31,
+      "previous": 80.23,
       "five_ago": null,
-      "one_day_pct": null,
+      "one_day_pct": 0.0997,
       "five_day_pct": null,
-      "one_day_change": null,
+      "one_day_change": 0.0799999999999983,
       "five_day_change": null,
-      "open": null,
-      "date": null,
+      "open": 80.26,
+      "date": "2026-05-29T16:10:00.000-0400",
       "source": "CNBC quote",
       "name": "HYG 高收益债",
       "format": "price",
-      "status": "unknown",
-      "interpretation": "暂无数据"
+      "status": "neutral",
+      "interpretation": "参考趋势"
     },
     "jnk": {
       "symbol": "JNK",
