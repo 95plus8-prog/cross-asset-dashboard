@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T08:16:57.429256+00:00",
+  "generated_at": "2026-06-06T12:19:21.299882+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -37,20 +37,20 @@
     },
     "rsp": {
       "symbol": "RSP",
-      "latest": null,
-      "previous": null,
+      "latest": 207.83,
+      "previous": 210.83,
       "five_ago": null,
-      "one_day_pct": null,
+      "one_day_pct": -1.4229,
       "five_day_pct": null,
-      "one_day_change": null,
+      "one_day_change": -3.0,
       "five_day_change": null,
-      "open": null,
-      "date": null,
+      "open": 209.87,
+      "date": "2026-06-05T16:10:00.000-0400",
       "source": "CNBC quote",
       "name": "RSP 等权标普500",
       "format": "price",
-      "status": "unknown",
-      "interpretation": "暂无数据"
+      "status": "neutral",
+      "interpretation": "参考趋势"
     },
     "iwm": {
       "symbol": "IWM",
@@ -122,20 +122,20 @@
     },
     "dxy": {
       "symbol": ".DXY",
-      "latest": null,
-      "previous": null,
+      "latest": 100.071,
+      "previous": 99.413,
       "five_ago": null,
-      "one_day_pct": null,
+      "one_day_pct": 0.66,
       "five_day_pct": null,
-      "one_day_change": null,
+      "one_day_change": 0.6580000000000013,
       "five_day_change": null,
-      "open": null,
-      "date": null,
+      "open": 99.432,
+      "date": "2026-06-05T16:59:59.000-0400",
       "source": "CNBC quote",
       "name": "美元指数 DXY",
       "format": "number",
-      "status": "unknown",
-      "interpretation": "暂无数据"
+      "status": "neutral",
+      "interpretation": "参考趋势"
     },
     "gold": {
       "symbol": "@GC.1",
@@ -184,12 +184,12 @@
     },
     "rsp_spy": {
       "name": "RSP/SPY 市场广度",
-      "latest": null,
-      "previous": null,
+      "latest": 0.28178428581113146,
+      "previous": 0.27847415762987227,
       "five_ago": null,
-      "one_day_pct": null,
+      "one_day_pct": 1.188666197765742,
       "five_day_pct": null,
-      "one_day_change": null,
+      "one_day_change": 0.0033101281812591976,
       "five_day_change": null,
       "source": "RSP / SPY"
     },
@@ -212,7 +212,9 @@
     "flags": [
       "IWM/SPY 走弱，小盘风险偏好不足"
     ],
-    "positives": []
+    "positives": [
+      "RSP/SPY 走强，市场广度改善"
+    ]
   },
   "errors": [],
   "notes": [
