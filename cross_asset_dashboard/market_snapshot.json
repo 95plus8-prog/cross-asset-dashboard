@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T20:25:31.106222+00:00",
+  "generated_at": "2026-06-15T22:32:49.503165+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -106,14 +106,14 @@
     "tnx": {
       "symbol": "US10Y",
       "latest": 4.473,
-      "previous": 4.485,
+      "previous": 4.469,
       "five_ago": null,
-      "one_day_pct": -0.2676,
+      "one_day_pct": 0.0895,
       "five_day_pct": null,
-      "one_day_change": -0.012000000000000455,
+      "one_day_change": 0.0039999999999995595,
       "five_day_change": null,
-      "open": 4.434,
-      "date": "2026-06-15T16:23:58.000-0400",
+      "open": 0.0,
+      "date": "2026-06-15T17:05:00.000-0400",
       "source": "CNBC quote",
       "name": "10 年期美债收益率",
       "format": "yield",
@@ -122,15 +122,15 @@
     },
     "dxy": {
       "symbol": ".DXY",
-      "latest": 99.688,
-      "previous": 99.747,
+      "latest": 99.631,
+      "previous": 99.631,
       "five_ago": null,
-      "one_day_pct": -0.06,
+      "one_day_pct": 0.0,
       "five_day_pct": null,
-      "one_day_change": -0.0589999999999975,
+      "one_day_change": 0.0,
       "five_day_change": null,
-      "open": 99.536,
-      "date": "2026-06-15T16:25:15.000-0400",
+      "open": 0.0,
+      "date": "2026-06-15T00:00:00.000-0400",
       "source": "CNBC quote",
       "name": "美元指数 DXY",
       "format": "number",
@@ -139,15 +139,15 @@
     },
     "gold": {
       "symbol": "@GC.1",
-      "latest": 4337.9,
-      "previous": 4238.8,
+      "latest": 4330.9,
+      "previous": 4351.6,
       "five_ago": null,
-      "one_day_pct": 2.34,
+      "one_day_pct": -0.48,
       "five_day_pct": null,
-      "one_day_change": 99.09999999999945,
+      "one_day_change": -20.700000000000728,
       "five_day_change": null,
-      "open": 4289.4,
-      "date": "2026-06-15T16:14:57.000-0400",
+      "open": 4331.3,
+      "date": "2026-06-15T18:22:47.000-0400",
       "source": "CNBC quote",
       "name": "黄金期货",
       "format": "price",
@@ -155,18 +155,32 @@
       "interpretation": "参考趋势"
     },
     "fear_greed": {
-      "latest": 40.9142857142857,
+      "latest": 40.8571428571429,
       "rating": "fear",
       "previous": 34.0,
       "one_week": 39.8571428571429,
       "one_month": 62.9714285714286,
-      "one_day_change": 6.914285714285697,
-      "one_week_change": 1.0571428571428,
-      "date": "2026-06-15T20:11:12+00:00",
+      "one_day_change": 6.857142857142897,
+      "one_week_change": 1.0,
+      "date": "2026-06-15T22:16:41+00:00",
       "source": "CNN Fear & Greed",
       "name": "Fear & Greed",
       "status": "neutral",
       "interpretation": "偏恐惧"
+    },
+    "hy_spread": {
+      "series": "BAMLH0A0HYM2",
+      "latest": 2.71,
+      "previous": 2.78,
+      "five_ago": 2.76,
+      "one_day_change": -0.06999999999999984,
+      "five_day_change": -0.04999999999999982,
+      "date": "2026-06-12",
+      "source": "FRED",
+      "name": "高收益债利差",
+      "unit": "%",
+      "status": "neutral",
+      "interpretation": "信用压力低"
     },
     "rsp_spy": {
       "name": "RSP/SPY 市场广度",
@@ -201,12 +215,7 @@
     ],
     "positives": []
   },
-  "errors": [
-    {
-      "key": "hy_spread",
-      "error": "The read operation timed out"
-    }
-  ],
+  "errors": [],
   "notes": [
     "所有行情仅用于监测和辅助判断，不构成投资建议。",
     "Yahoo/CNN/FRED/Stooq 等公共数据源可能延迟或短暂不可用。",
