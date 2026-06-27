@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T23:55:36.464959+00:00",
+  "generated_at": "2026-06-27T02:28:57.612909+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -162,7 +162,7 @@
       "one_month": 60.9142857142857,
       "one_day_change": -0.685714285714301,
       "one_week_change": -12.8285714285714,
-      "date": "2026-06-26T23:40:01+00:00",
+      "date": "2026-06-26T23:59:57+00:00",
       "source": "CNN Fear & Greed",
       "name": "Fear & Greed",
       "status": "watch",
