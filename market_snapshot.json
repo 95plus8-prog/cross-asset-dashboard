@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T21:57:09.494467+00:00",
+  "generated_at": "2026-07-03T22:58:17.495892+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -71,6 +71,23 @@
     },
     "hyg": {
       "symbol": "HYG",
+      "latest": 79.71,
+      "previous": 79.59,
+      "five_ago": null,
+      "one_day_pct": 0.1508,
+      "five_day_pct": null,
+      "one_day_change": 0.11999999999999034,
+      "five_day_change": null,
+      "open": 79.73,
+      "date": "2026-07-02T16:10:00.000-0400",
+      "source": "CNBC quote",
+      "name": "HYG 高收益债",
+      "format": "price",
+      "status": "neutral",
+      "interpretation": "参考趋势"
+    },
+    "jnk": {
+      "symbol": "JNK",
       "latest": null,
       "previous": null,
       "five_ago": null,
@@ -81,27 +98,10 @@
       "open": null,
       "date": null,
       "source": "CNBC quote",
-      "name": "HYG 高收益债",
+      "name": "JNK 高收益债",
       "format": "price",
       "status": "unknown",
       "interpretation": "暂无数据"
-    },
-    "jnk": {
-      "symbol": "JNK",
-      "latest": 95.99,
-      "previous": 95.88,
-      "five_ago": null,
-      "one_day_pct": 0.1147,
-      "five_day_pct": null,
-      "one_day_change": 0.10999999999999943,
-      "five_day_change": null,
-      "open": 96.02,
-      "date": "2026-07-02T16:10:00.000-0400",
-      "source": "CNBC quote",
-      "name": "JNK 高收益债",
-      "format": "price",
-      "status": "neutral",
-      "interpretation": "参考趋势"
     },
     "tnx": {
       "symbol": "US10Y",
@@ -122,20 +122,20 @@
     },
     "dxy": {
       "symbol": ".DXY",
-      "latest": null,
-      "previous": null,
+      "latest": 100.879,
+      "previous": 100.857,
       "five_ago": null,
-      "one_day_pct": null,
+      "one_day_pct": 0.02,
       "five_day_pct": null,
-      "one_day_change": null,
+      "one_day_change": 0.02200000000000557,
       "five_day_change": null,
-      "open": null,
-      "date": null,
+      "open": 100.913,
+      "date": "2026-07-03T16:59:59.000-0400",
       "source": "CNBC quote",
       "name": "美元指数 DXY",
       "format": "number",
-      "status": "unknown",
-      "interpretation": "暂无数据"
+      "status": "neutral",
+      "interpretation": "参考趋势"
     },
     "gold": {
       "symbol": "@GC.1",
