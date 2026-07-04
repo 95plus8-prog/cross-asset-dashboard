@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T22:58:17.495892+00:00",
+  "generated_at": "2026-07-04T00:03:12.809490+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -88,20 +88,20 @@
     },
     "jnk": {
       "symbol": "JNK",
-      "latest": null,
-      "previous": null,
+      "latest": 95.99,
+      "previous": 95.88,
       "five_ago": null,
-      "one_day_pct": null,
+      "one_day_pct": 0.1147,
       "five_day_pct": null,
-      "one_day_change": null,
+      "one_day_change": 0.10999999999999943,
       "five_day_change": null,
-      "open": null,
-      "date": null,
+      "open": 96.02,
+      "date": "2026-07-02T16:10:00.000-0400",
       "source": "CNBC quote",
       "name": "JNK 高收益债",
       "format": "price",
-      "status": "unknown",
-      "interpretation": "暂无数据"
+      "status": "neutral",
+      "interpretation": "参考趋势"
     },
     "tnx": {
       "symbol": "US10Y",
