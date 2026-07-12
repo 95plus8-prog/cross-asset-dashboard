@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-12T15:31:01.693034+00:00",
+  "generated_at": "2026-07-12T16:46:53.268563+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -139,15 +139,15 @@
     },
     "gold": {
       "symbol": "@GC.1",
-      "latest": 4128.9,
-      "previous": 4140.8,
+      "latest": 4113.7,
+      "previous": 4113.7,
       "five_ago": null,
-      "one_day_pct": -0.29,
+      "one_day_pct": 0.0,
       "five_day_pct": null,
-      "one_day_change": -11.900000000000546,
+      "one_day_change": 0.0,
       "five_day_change": null,
-      "open": 4135.4,
-      "date": "2026-07-11T18:16:21.000-0400",
+      "open": 0.0,
+      "date": "2026-07-11T01:00:00.000-0400",
       "source": "CNBC quote",
       "name": "黄金期货",
       "format": "price",
