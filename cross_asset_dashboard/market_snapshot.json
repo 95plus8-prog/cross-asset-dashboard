@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T01:29:35.301369+00:00",
+  "generated_at": "2026-07-18T04:26:18.182322+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -147,7 +147,7 @@
       "one_day_change": 30.90000000000009,
       "five_day_change": null,
       "open": 3980.1,
-      "date": "2026-07-17T18:15:55.000-0400",
+      "date": "2026-07-18T18:15:55.000-0400",
       "source": "CNBC quote",
       "name": "黄金期货",
       "format": "price",
