@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T20:05:24.024734+00:00",
+  "generated_at": "2026-07-26T21:23:48.118821+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -122,15 +122,15 @@
     },
     "dxy": {
       "symbol": ".DXY",
-      "latest": 101.465,
-      "previous": 101.444,
+      "latest": 101.468,
+      "previous": 101.468,
       "five_ago": null,
-      "one_day_pct": 0.02,
+      "one_day_pct": 0.0,
       "five_day_pct": null,
-      "one_day_change": 0.021000000000000796,
+      "one_day_change": 0.0,
       "five_day_change": null,
-      "open": 101.444,
-      "date": "2026-07-24T16:59:59.000-0400",
+      "open": 0.0,
+      "date": "2026-07-24T00:00:00.000-0400",
       "source": "CNBC quote",
       "name": "美元指数 DXY",
       "format": "number",
