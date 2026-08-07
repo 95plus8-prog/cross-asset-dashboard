@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T21:11:22.712071+00:00",
+  "generated_at": "2026-08-07T22:03:05.552335+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -147,7 +147,7 @@
       "one_day_change": 101.69999999999982,
       "five_day_change": null,
       "open": 4298.3,
-      "date": "2026-08-07T16:59:55.000-0400",
+      "date": "2026-08-07T17:38:34.000-0400",
       "source": "CNBC quote",
       "name": "黄金期货",
       "format": "price",
@@ -162,7 +162,7 @@
       "one_month": 39.771428571428565,
       "one_day_change": 3.9714285714285964,
       "one_week_change": 18.457142857142898,
-      "date": "2026-08-07T20:53:55+00:00",
+      "date": "2026-08-07T21:44:12+00:00",
       "source": "CNN Fear & Greed",
       "name": "Fear & Greed",
       "status": "hot",
