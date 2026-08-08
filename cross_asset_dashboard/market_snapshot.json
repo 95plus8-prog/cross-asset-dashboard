@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T23:55:10.118377+00:00",
+  "generated_at": "2026-08-08T00:55:01.849106+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -96,7 +96,7 @@
       "one_day_change": 0.20000000000000284,
       "five_day_change": null,
       "open": 95.85,
-      "date": "2026-08-07T18:30:00.003-0400",
+      "date": "2026-08-07T20:00:00.146-0400",
       "source": "CNBC quote",
       "name": "JNK 高收益债",
       "format": "price",
@@ -162,7 +162,7 @@
       "one_month": 39.771428571428565,
       "one_day_change": 3.9714285714285964,
       "one_week_change": 18.457142857142898,
-      "date": "2026-08-07T23:34:57+00:00",
+      "date": "2026-08-07T23:59:47+00:00",
       "source": "CNN Fear & Greed",
       "name": "Fear & Greed",
       "status": "hot",
