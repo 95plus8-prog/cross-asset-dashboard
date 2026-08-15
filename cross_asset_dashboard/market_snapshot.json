@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T22:44:12.782668+00:00",
+  "generated_at": "2026-08-15T23:11:34.345049+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -113,7 +113,7 @@
       "one_day_change": 0.051000000000000156,
       "five_day_change": null,
       "open": 0.0,
-      "date": "2026-08-15T01:59:00.000-0400",
+      "date": "2026-08-15T18:50:00.000-0400",
       "source": "CNBC quote",
       "name": "10 年期美债收益率",
       "format": "yield",
