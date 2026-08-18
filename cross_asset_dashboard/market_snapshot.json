@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T21:13:53.259213+00:00",
+  "generated_at": "2026-08-18T21:44:21.298325+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -122,15 +122,15 @@
     },
     "dxy": {
       "symbol": ".DXY",
-      "latest": 99.647,
+      "latest": 99.651,
       "previous": 99.637,
       "five_ago": null,
       "one_day_pct": 0.01,
       "five_day_pct": null,
-      "one_day_change": 0.010000000000005116,
+      "one_day_change": 0.013999999999995794,
       "five_day_change": null,
       "open": 99.54,
-      "date": "2026-08-18T17:13:52.000-0400",
+      "date": "2026-08-18T17:44:20.000-0400",
       "source": "CNBC quote",
       "name": "美元指数 DXY",
       "format": "number",
@@ -162,7 +162,7 @@
       "one_month": 37.2285714285714,
       "one_day_change": -5.571428571428605,
       "one_week_change": -7.028571428571404,
-      "date": "2026-08-18T20:54:44+00:00",
+      "date": "2026-08-18T21:25:02+00:00",
       "source": "CNN Fear & Greed",
       "name": "Fear & Greed",
       "status": "neutral",
