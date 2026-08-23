@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T09:18:14.107895+00:00",
+  "generated_at": "2026-08-23T09:49:42.160936+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -105,20 +105,20 @@
     },
     "tnx": {
       "symbol": "US10Y",
-      "latest": null,
-      "previous": null,
+      "latest": 4.736,
+      "previous": 4.698,
       "five_ago": null,
-      "one_day_pct": null,
+      "one_day_pct": 0.8089,
       "five_day_pct": null,
-      "one_day_change": null,
+      "one_day_change": 0.03799999999999937,
       "five_day_change": null,
-      "open": 0.0,
-      "date": null,
+      "open": 4.706,
+      "date": "2026-08-21T17:05:00.000-0400",
       "source": "CNBC quote",
       "name": "10 年期美债收益率",
       "format": "yield",
-      "status": "unknown",
-      "interpretation": "暂无数据"
+      "status": "neutral",
+      "interpretation": "参考趋势"
     },
     "dxy": {
       "symbol": ".DXY",
