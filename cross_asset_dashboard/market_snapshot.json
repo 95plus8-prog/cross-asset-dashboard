@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T04:44:44.365317+00:00",
+  "generated_at": "2026-10-17T08:55:49.074285+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -123,11 +123,11 @@
     "dxy": {
       "symbol": ".DXY",
       "latest": 101.779,
-      "previous": 102.055,
+      "previous": 101.837,
       "five_ago": null,
       "one_day_pct": -0.27,
       "five_day_pct": null,
-      "one_day_change": -0.27600000000001046,
+      "one_day_change": -0.058000000000006935,
       "five_day_change": null,
       "open": 102.044,
       "date": "2026-10-16T16:59:59.000-0400",
