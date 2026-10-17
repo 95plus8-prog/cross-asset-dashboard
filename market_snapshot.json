@@ -1,39 +1,39 @@
 {
-  "generated_at": "2026-10-16T21:49:48.507901+00:00",
+  "generated_at": "2026-10-17T00:03:19.547228+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
-      "latest": 19.99,
-      "previous": 16.46,
+      "latest": null,
+      "previous": null,
       "five_ago": null,
-      "one_day_pct": 21.446,
+      "one_day_pct": null,
       "five_day_pct": null,
-      "one_day_change": 3.5299999999999976,
+      "one_day_change": null,
       "five_day_change": null,
-      "open": 16.02,
-      "date": "2026-10-16T16:15:01.000-0400",
+      "open": null,
+      "date": null,
       "source": "CNBC quote",
       "name": "VIX 恐慌指数",
       "format": "number",
-      "status": "neutral",
-      "interpretation": "正常波动"
+      "status": "unknown",
+      "interpretation": "暂无数据"
     },
     "spy": {
       "symbol": "SPY",
-      "latest": 763.25,
-      "previous": 771.79,
+      "latest": null,
+      "previous": null,
       "five_ago": null,
-      "one_day_pct": -1.1065,
+      "one_day_pct": null,
       "five_day_pct": null,
-      "one_day_change": -8.539999999999964,
+      "one_day_change": null,
       "five_day_change": null,
-      "open": 773.24,
-      "date": "2026-10-16T16:10:00.000-0400",
+      "open": null,
+      "date": null,
       "source": "CNBC quote",
       "name": "SPY 标普500",
       "format": "price",
-      "status": "neutral",
-      "interpretation": "参考趋势"
+      "status": "unknown",
+      "interpretation": "暂无数据"
     },
     "rsp": {
       "symbol": "RSP",
@@ -147,7 +147,7 @@
       "one_day_change": 16.599999999999454,
       "five_day_change": null,
       "open": 4192.1,
-      "date": "2026-10-16T17:39:18.000-0400",
+      "date": "2026-10-16T18:42:05.000-0400",
       "source": "CNBC quote",
       "name": "黄金期货",
       "format": "price",
@@ -162,7 +162,7 @@
       "one_month": 27.3142857142857,
       "one_day_change": -13.604535147392198,
       "one_week_change": -28.5473922902494,
-      "date": "2026-10-16T21:25:29+00:00",
+      "date": "2026-10-16T23:45:23+00:00",
       "source": "CNN Fear & Greed",
       "name": "Fear & Greed",
       "status": "watch",
@@ -184,23 +184,23 @@
     },
     "rsp_spy": {
       "name": "RSP/SPY 市场广度",
-      "latest": 0.2804978709466099,
-      "previous": 0.2785731870068283,
+      "latest": null,
+      "previous": null,
       "five_ago": null,
-      "one_day_pct": 0.6909078222716358,
+      "one_day_pct": null,
       "five_day_pct": null,
-      "one_day_change": 0.0019246839397815685,
+      "one_day_change": null,
       "five_day_change": null,
       "source": "RSP / SPY"
     },
     "iwm_spy": {
       "name": "IWM/SPY 风险扩散",
-      "latest": 0.35432689158205044,
-      "previous": 0.35641819665971314,
+      "latest": null,
+      "previous": null,
       "five_ago": null,
-      "one_day_pct": -0.5867559785841525,
+      "one_day_pct": null,
       "five_day_pct": null,
-      "one_day_change": -0.0020913050776626974,
+      "one_day_change": null,
       "five_day_change": null,
       "source": "IWM / SPY"
     }
@@ -211,8 +211,7 @@
     "action": "按计划小步加仓，优先核心资产和现金流强的公司，不一次性打满。",
     "flags": [],
     "positives": [
-      "Fear & Greed 处于极度恐惧",
-      "RSP/SPY 走强，市场广度改善"
+      "Fear & Greed 处于极度恐惧"
     ]
   },
   "errors": [],
