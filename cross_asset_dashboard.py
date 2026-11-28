@@ -302,11 +302,13 @@ def apply_history(metrics: dict, history: dict) -> None:
         if day is None:
             continue
         series = history.setdefault(key, {})
-        earlier = sorted(d for d in series if d < day.isoformat())
+        # 周六的报价属于周五交易日，周日晚的期货报价属于周一交易日
+        session = day + dt.timedelta(days={5: -1, 6: 1}.get(day.weekday(), 0))
+        earlier = sorted(d for d in series if d < session.isoformat())
         if len(earlier) >= 5:
             ref = earlier[-5]
             # 5 个交易日，最多容许 1 个假期
-            if weekdays_between(dt.date.fromisoformat(ref), day) <= 6:
+            if weekdays_between(dt.date.fromisoformat(ref), session) <= 6:
                 five_ago = series[ref]
                 item["five_ago"] = five_ago
                 item["five_day_pct"] = pct_change(item["latest"], five_ago)
