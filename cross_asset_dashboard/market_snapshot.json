@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T09:04:28.289574+00:00",
+  "generated_at": "2026-11-28T14:39:58.875977+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
@@ -17,7 +17,7 @@
       "format": "number",
       "status": "neutral",
       "interpretation": "正常波动",
-      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
+      "fetched_at": "2026-11-28T14:39:58.875977+00:00"
     },
     "spy": {
       "symbol": "SPY",
@@ -35,7 +35,7 @@
       "format": "price",
       "status": "neutral",
       "interpretation": "参考趋势",
-      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
+      "fetched_at": "2026-11-28T14:39:58.875977+00:00"
     },
     "rsp": {
       "symbol": "RSP",
@@ -53,7 +53,7 @@
       "format": "price",
       "status": "neutral",
       "interpretation": "参考趋势",
-      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
+      "fetched_at": "2026-11-28T14:39:58.875977+00:00"
     },
     "iwm": {
       "symbol": "IWM",
@@ -71,7 +71,7 @@
       "format": "price",
       "status": "neutral",
       "interpretation": "参考趋势",
-      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
+      "fetched_at": "2026-11-28T14:39:58.875977+00:00"
     },
     "hyg": {
       "symbol": "HYG",
@@ -89,7 +89,7 @@
       "format": "price",
       "status": "neutral",
       "interpretation": "参考趋势",
-      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
+      "fetched_at": "2026-11-28T14:39:58.875977+00:00"
     },
     "jnk": {
       "symbol": "JNK",
@@ -107,7 +107,7 @@
       "format": "price",
       "status": "neutral",
       "interpretation": "参考趋势",
-      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
+      "fetched_at": "2026-11-28T14:39:58.875977+00:00"
     },
     "tnx": {
       "symbol": "US10Y",
@@ -125,7 +125,7 @@
       "format": "yield",
       "status": "neutral",
       "interpretation": "参考趋势",
-      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
+      "fetched_at": "2026-11-28T14:39:58.875977+00:00"
     },
     "dxy": {
       "symbol": ".DXY",
@@ -143,17 +143,17 @@
       "format": "number",
       "status": "neutral",
       "interpretation": "参考趋势",
-      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
+      "fetched_at": "2026-11-28T14:39:58.875977+00:00"
     },
     "gold": {
       "symbol": "@GC.1",
       "latest": 3650.0,
       "previous": 3535.8,
-      "five_ago": 3671.2,
+      "five_ago": 3539.0,
       "one_day_pct": 3.23,
-      "five_day_pct": -0.5774678579211101,
+      "five_day_pct": 3.1364792314213075,
       "one_day_change": 114.19999999999982,
-      "five_day_change": -21.199999999999818,
+      "five_day_change": 111.0,
       "open": 3590.3,
       "date": "2026-11-28T18:38:03.000-0500",
       "source": "CNBC quote",
@@ -161,7 +161,7 @@
       "format": "price",
       "status": "neutral",
       "interpretation": "参考趋势",
-      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
+      "fetched_at": "2026-11-28T14:39:58.875977+00:00"
     },
     "fear_greed": {
       "latest": 24.8857142857143,
@@ -176,7 +176,7 @@
       "name": "Fear & Greed",
       "status": "watch",
       "interpretation": "极度恐惧，关注反向机会",
-      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
+      "fetched_at": "2026-11-28T14:39:58.875977+00:00"
     },
     "hy_spread": {
       "series": "BAMLH0A0HYM2",
@@ -191,7 +191,7 @@
       "unit": "%",
       "status": "watch",
       "interpretation": "信用压力抬升",
-      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
+      "fetched_at": "2026-11-28T14:39:58.875977+00:00"
     },
     "rsp_spy": {
       "name": "RSP/SPY 市场广度",
