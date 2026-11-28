@@ -149,6 +149,15 @@ class HistoryTest(unittest.TestCase):
         app.apply_history(metrics, history)
         self.assertIsNone(metrics["spy"]["five_day_pct"])
 
+    def test_weekend_quote_uses_the_right_session(self):
+        # (报价日期, 应该对比的价格)
+        for day, expected in (("2026-11-21", 99.0), ("2026-11-22", 100.0)):
+            with self.subTest(day=day):
+                history = {"gold": {"2026-11-13": 99.0, **{d: 100.0 + i for i, d in enumerate(self.days)}}}
+                metrics = {"gold": quote("gold", 110.0, day)}
+                app.apply_history(metrics, history)
+                self.assertEqual(expected, metrics["gold"]["five_ago"])
+
     def test_weekend_is_not_recorded(self):
         history = {}
         app.apply_history({"gold": quote("gold", day="2026-11-29")}, history)
@@ -195,7 +204,8 @@ class RiskReadingTest(unittest.TestCase):
     def test_netlify_matches_python(self):
         cases = [metrics for _, metrics in scenarios()]
         history = {"spy": {d: 100.0 + i for i, d in enumerate(HistoryTest.days)}}
-        spy = {"spy": quote("spy", 110.0, "2026-11-23")}
+        spy = {"spy": quote("spy", 110.0, "2026-11-23"), "gold": quote("gold", 110.0, "2026-11-22")}
+        history["gold"] = dict(history["spy"])
         module = (ROOT / "netlify" / "functions" / "markets.mjs").as_uri()
         script = f"""
           const m = await import({json.dumps(module)});
@@ -214,6 +224,7 @@ class RiskReadingTest(unittest.TestCase):
         app.apply_history(expected, copy.deepcopy(history))
         self.assertEqual(expected["spy"]["five_ago"], result["spy"]["spy"]["five_ago"])
         self.assertAlmostEqual(expected["spy"]["five_day_pct"], result["spy"]["spy"]["five_day_pct"])
+        self.assertEqual(expected["gold"]["five_ago"], result["spy"]["gold"]["five_ago"])
 
 
 if __name__ == "__main__":

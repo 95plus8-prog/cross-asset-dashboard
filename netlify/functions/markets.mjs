@@ -213,11 +213,15 @@ export function applyHistory(metrics, history) {
     const day = parseDay(item.date);
     if (!day) continue;
     const series = history[key] ?? {};
-    const earlier = Object.keys(series).filter((d) => d < day).sort();
+    // 周六的报价属于周五交易日，周日晚的期货报价属于周一交易日
+    const date = new Date(`${day}T00:00:00Z`);
+    date.setUTCDate(date.getUTCDate() + ({ 6: -1, 0: 1 }[date.getUTCDay()] ?? 0));
+    const session = date.toISOString().slice(0, 10);
+    const earlier = Object.keys(series).filter((d) => d < session).sort();
     if (earlier.length < 5) continue;
     const ref = earlier.at(-5);
     // 5 个交易日，最多容许 1 个假期
-    if (weekdaysBetween(ref, day) > 6) continue;
+    if (weekdaysBetween(ref, session) > 6) continue;
     item.five_ago = series[ref];
     item.five_day_pct = pctChange(item.latest, series[ref]);
     item.five_day_change = pointChange(item.latest, series[ref]);
