@@ -96,6 +96,19 @@
     .badge.opportunity { color: var(--good); background: #ecfdf3; border-color: #abefc6; }
     .badge.watch { color: var(--watch); background: #fffaeb; border-color: #fedf89; }
     .badge.risk, .badge.extreme { color: var(--risk); background: #fef3f2; border-color: #fecdca; }
+    .badge.hot { color: var(--watch); background: #fffaeb; border-color: #fedf89; }
+    .badge.unknown { color: var(--muted); background: #f2f4f7; border-color: var(--line); }
+    .stale-tag { color: var(--watch); font-size: 12px; font-weight: 700; }
+    .warning {
+      margin-bottom: 16px;
+      color: var(--watch);
+      background: #fffaeb;
+      border: 1px solid #fedf89;
+      border-radius: 8px;
+      padding: 12px;
+      font-weight: 650;
+    }
+    .warning[hidden] { display: none; }
     .action {
       font-size: 16px;
       margin: 0 0 10px;
@@ -217,6 +230,7 @@
   </header>
 
   <main class="wrap">
+    <div id="warning" class="warning" role="alert" hidden></div>
     <section class="summary">
       <div class="panel">
         <div class="regime">
@@ -282,6 +296,46 @@
       gold: "黄金"
     };
 
+    const STALE_HOURS = 12;
+
+    const toneLabels = {
+      neutral: "中性",
+      opportunity: "机会",
+      watch: "观察",
+      risk: "风险",
+      unknown: "未知"
+    };
+
+    function esc(value) {
+      return String(value ?? "").replace(/[&<>"']/g, c => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      }[c]));
+    }
+
+    function staleTag(item) {
+      if (!item.stale) return "";
+      const text = item.expired ? "过期数据" : "旧数据";
+      return `<div class="stale-tag">${text}（上次成功：${esc(fmtDate(item.fetched_at))}）</div>`;
+    }
+
+    let lastData = null;
+
+    function renderWarning() {
+      if (!lastData) return;
+      const messages = [];
+      const hours = (Date.now() - Date.parse(lastData.generated_at)) / 36e5;
+      if (!(hours <= STALE_HOURS)) {
+        messages.push(Number.isFinite(hours)
+          ? `数据已超过 ${Math.floor(hours)} 小时没有更新，请不要当作实时数据使用。`
+          : "无法确认数据更新时间。");
+      }
+      const stale = Object.values(lastData.metrics || {}).filter(item => item.stale).length;
+      if (stale) messages.push(`有 ${stale} 项指标沿用旧数据。`);
+      const warning = document.getElementById("warning");
+      warning.hidden = messages.length === 0;
+      warning.textContent = messages.join(" ");
+    }
+
     function fmt(n, digits = 2) {
       if (n === null || n === undefined || Number.isNaN(n)) return "-";
       return Number(n).toLocaleString("en-US", {
@@ -299,6 +353,8 @@
 
     function fmtDate(raw) {
       if (!raw) return "-";
+      // 纯日期原样显示，避免时区换算后变成前一天
+      if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw.replaceAll("-", "/");
       const d = new Date(raw);
       if (Number.isNaN(d.getTime())) return raw;
       return d.toLocaleString("zh-CN", { hour12: false });
@@ -333,7 +389,7 @@
         el.innerHTML = `<li class="muted">暂无</li>`;
         return;
       }
-      el.innerHTML = list.map(x => `<li>${x}</li>`).join("");
+      el.innerHTML = list.map(x => `<li>${esc(x)}</li>`).join("");
     }
 
     function render(data) {
@@ -341,7 +397,7 @@
       document.getElementById("regime").textContent = reading.regime || "数据不足";
       const tone = document.getElementById("tone");
       tone.className = `badge ${reading.tone || "neutral"}`;
-      tone.textContent = reading.tone || "neutral";
+      tone.textContent = toneLabels[reading.tone] || "中性";
       document.getElementById("action").textContent = reading.action || "等待数据。";
       document.getElementById("updated").textContent = `更新时间：${fmtDate(data.generated_at)}`;
       renderList("flags", reading.flags);
@@ -353,13 +409,14 @@
         const item = metrics[k];
         return `
           <article class="card">
-            <h3>${labels[k] || item.name || k}</h3>
+            <h3>${esc(labels[k] || item.name || k)}</h3>
             <div class="value">${valueFor(k, item)}</div>
             <div class="delta">
               <span>1日 ${oneDayFor(k, item)}</span>
               <span>5日 ${fiveDayFor(k, item)}</span>
             </div>
-            <div class="interp">${item.interpretation || ""}</div>
+            <div class="interp">${esc(item.interpretation)}</div>
+            ${staleTag(item)}
           </article>
         `;
       }).join("");
@@ -369,12 +426,12 @@
         const item = metrics[k];
         return `
           <tr>
-            <td><strong>${item.name || labels[k] || k}</strong><br><span class="muted">${item.symbol || item.series || item.source || ""}</span></td>
+            <td><strong>${esc(item.name || labels[k] || k)}</strong><br><span class="muted">${esc(item.symbol || item.series || item.source)}</span></td>
             <td class="num">${valueFor(k, item)}</td>
             <td class="num">${oneDayFor(k, item)}</td>
             <td class="num">${fiveDayFor(k, item)}</td>
-            <td><span class="badge ${statusClass(item)}">${item.interpretation || "参考趋势"}</span></td>
-            <td class="muted">${item.source || "-"}<br>${fmtDate(item.date)}</td>
+            <td><span class="badge ${esc(statusClass(item))}">${esc(item.interpretation || "参考趋势")}</span></td>
+            <td class="muted">${esc(item.source || "-")}<br>${esc(fmtDate(item.date))}${staleTag(item)}</td>
           </tr>
         `;
       }).join("");
@@ -386,6 +443,9 @@
       } else {
         error.style.display = "none";
       }
+
+      lastData = data;
+      renderWarning();
     }
 
     async function load() {
@@ -404,6 +464,7 @@
         const error = document.getElementById("error");
         error.style.display = "block";
         error.textContent = "刷新失败：" + err.message;
+        renderWarning();
       } finally {
         document.getElementById("refresh").disabled = false;
       }

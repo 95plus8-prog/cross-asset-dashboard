@@ -16,6 +16,8 @@
 
 ## 本地运行
 
+需要 Python 3.9 或以上，不需要安装其他套件。
+
 ```bash
 python3 cross_asset_dashboard.py
 ```
@@ -33,7 +35,33 @@ python3 cross_asset_dashboard.py --snapshot
 cp cross_asset_dashboard/market_snapshot.json market_snapshot.json
 ```
 
-GitHub Pages 读取根目录的 `market_snapshot.json`。本仓库已经配置 GitHub Actions，会定时抓取数据并更新这个文件。
+GitHub Pages 读取根目录的 `market_snapshot.json`。本仓库已经配置 GitHub Actions，会定时抓取数据并更新这个文件。GitHub 的定时任务经常延迟或跳过，实际更新频率会低于设定的每 30 分钟。
+
+## 5 日变化与旧数据
+
+- `market_history.json` 记录每个交易日最后一次抓到的行情，用来估算 5 日变化（不一定等于收市价）。历史缺口过大时留空。
+- 个别数据源失败时沿用上次成功的值，并标记为“旧数据”；超过 72 小时标记为过期，不再参与判断。
+- 页面数据超过 12 小时没有更新时会显示警告。
+
+## 判断规则
+
+风险项按权重计分：VIX ≥ 40 或高收益债利差 ≥ 5 计 3 分，VIX ≥ 30 计 2 分，其他风险项计 1 分。
+
+| 结论 | 条件 |
+|---|---|
+| 防守优先 | 风险分 ≥ 3 |
+| 数据不足 | 未达防守条件，且 VIX 或高收益债利差缺失、过期 |
+| 谨慎观察 | 有风险项 |
+| 可分批进攻 | 没有风险项，且至少 2 个机会信号 |
+| 中性运行 | 其他情况 |
+
+## 测试
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+安装了 Node.js 时，会同时检查 Netlify 函数与 Python 的判断结果是否一致。
 
 ## Netlify 部署
 
