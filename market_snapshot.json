@@ -1,158 +1,167 @@
 {
-  "generated_at": "2026-11-28T02:50:19.810121+00:00",
+  "generated_at": "2026-11-28T09:04:28.289574+00:00",
   "metrics": {
     "vix": {
       "symbol": ".VIX",
       "latest": 23.81,
       "previous": 26.8,
-      "five_ago": null,
+      "five_ago": 35.89,
       "one_day_pct": -11.157,
-      "five_day_pct": null,
+      "five_day_pct": -33.65840066870995,
       "one_day_change": -2.990000000000002,
-      "five_day_change": null,
+      "five_day_change": -12.080000000000002,
       "open": 24.89,
       "date": "2026-11-27T13:15:00.000-0500",
       "source": "CNBC quote",
       "name": "VIX 恐慌指数",
       "format": "number",
       "status": "neutral",
-      "interpretation": "正常波动"
+      "interpretation": "正常波动",
+      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
     },
     "spy": {
       "symbol": "SPY",
       "latest": 728.32,
       "previous": 716.7,
-      "five_ago": null,
+      "five_ago": 715.87,
       "one_day_pct": 1.6213,
-      "five_day_pct": null,
+      "five_day_pct": 1.739142581753672,
       "one_day_change": 11.620000000000005,
-      "five_day_change": null,
+      "five_day_change": 12.450000000000045,
       "open": 725.86,
       "date": "2026-11-27T13:10:00.000-0500",
       "source": "CNBC quote",
       "name": "SPY 标普500",
       "format": "price",
       "status": "neutral",
-      "interpretation": "参考趋势"
+      "interpretation": "参考趋势",
+      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
     },
     "rsp": {
       "symbol": "RSP",
       "latest": 218.38,
       "previous": 215.74,
-      "five_ago": null,
+      "five_ago": 211.63,
       "one_day_pct": 1.2237,
-      "five_day_pct": null,
+      "five_day_pct": 3.189528894769178,
       "one_day_change": 2.6399999999999864,
-      "five_day_change": null,
+      "five_day_change": 6.75,
       "open": 217.405,
       "date": "2026-11-27T13:10:00.000-0500",
       "source": "CNBC quote",
       "name": "RSP 等权标普500",
       "format": "price",
       "status": "neutral",
-      "interpretation": "参考趋势"
+      "interpretation": "参考趋势",
+      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
     },
     "iwm": {
       "symbol": "IWM",
       "latest": 273.79,
       "previous": 268.87,
-      "five_ago": null,
+      "five_ago": 264.22,
       "one_day_pct": 1.8299,
-      "five_day_pct": null,
+      "five_day_pct": 3.6219816819317296,
       "one_day_change": 4.920000000000016,
-      "five_day_change": null,
+      "five_day_change": 9.569999999999993,
       "open": 271.82,
       "date": "2026-11-27T13:10:00.000-0500",
       "source": "CNBC quote",
       "name": "IWM 小盘股",
       "format": "price",
       "status": "neutral",
-      "interpretation": "参考趋势"
+      "interpretation": "参考趋势",
+      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
     },
     "hyg": {
       "symbol": "HYG",
       "latest": 76.61,
       "previous": 76.52,
-      "five_ago": null,
+      "five_ago": 76.53,
       "one_day_pct": 0.1176,
-      "five_day_pct": null,
+      "five_day_pct": 0.10453416960669593,
       "one_day_change": 0.09000000000000341,
-      "five_day_change": null,
+      "five_day_change": 0.0799999999999983,
       "open": 76.67,
       "date": "2026-11-27T13:10:00.000-0500",
       "source": "CNBC quote",
       "name": "HYG 高收益债",
       "format": "price",
       "status": "neutral",
-      "interpretation": "参考趋势"
+      "interpretation": "参考趋势",
+      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
     },
     "jnk": {
       "symbol": "JNK",
       "latest": 91.9,
       "previous": 91.75,
-      "five_ago": null,
+      "five_ago": 91.85,
       "one_day_pct": 0.1635,
-      "five_day_pct": null,
+      "five_day_pct": 0.05443658138271079,
       "one_day_change": 0.15000000000000568,
-      "five_day_change": null,
+      "five_day_change": 0.05000000000001137,
       "open": 91.94,
       "date": "2026-11-27T13:10:00.000-0500",
       "source": "CNBC quote",
       "name": "JNK 高收益债",
       "format": "price",
       "status": "neutral",
-      "interpretation": "参考趋势"
+      "interpretation": "参考趋势",
+      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
     },
     "tnx": {
       "symbol": "US10Y",
       "latest": 4.936,
       "previous": 4.848,
-      "five_ago": null,
+      "five_ago": 4.95,
       "one_day_pct": 1.8152,
-      "five_day_pct": null,
+      "five_day_pct": -0.28282828282828465,
       "one_day_change": 0.08800000000000008,
-      "five_day_change": null,
+      "five_day_change": -0.014000000000000234,
       "open": 4.868,
       "date": "2026-11-27T14:30:00.000-0500",
       "source": "CNBC quote",
       "name": "10 年期美债收益率",
       "format": "yield",
       "status": "neutral",
-      "interpretation": "参考趋势"
+      "interpretation": "参考趋势",
+      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
     },
     "dxy": {
       "symbol": ".DXY",
       "latest": 104.035,
       "previous": 103.665,
-      "five_ago": null,
+      "five_ago": 103.84,
       "one_day_pct": 0.36,
-      "five_day_pct": null,
+      "five_day_pct": 0.18778890600923415,
       "one_day_change": 0.36999999999999034,
-      "five_day_change": null,
+      "five_day_change": 0.19499999999999318,
       "open": 103.829,
       "date": "2026-11-27T16:59:59.000-0500",
       "source": "CNBC quote",
       "name": "美元指数 DXY",
       "format": "number",
       "status": "neutral",
-      "interpretation": "参考趋势"
+      "interpretation": "参考趋势",
+      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
     },
     "gold": {
       "symbol": "@GC.1",
       "latest": 3650.0,
       "previous": 3535.8,
-      "five_ago": null,
+      "five_ago": 3671.2,
       "one_day_pct": 3.23,
-      "five_day_pct": null,
+      "five_day_pct": -0.5774678579211101,
       "one_day_change": 114.19999999999982,
-      "five_day_change": null,
+      "five_day_change": -21.199999999999818,
       "open": 3590.3,
-      "date": "2026-11-27T18:38:03.000-0500",
+      "date": "2026-11-28T18:38:03.000-0500",
       "source": "CNBC quote",
       "name": "黄金期货",
       "format": "price",
       "status": "neutral",
-      "interpretation": "参考趋势"
+      "interpretation": "参考趋势",
+      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
     },
     "fear_greed": {
       "latest": 24.8857142857143,
@@ -166,7 +175,8 @@
       "source": "CNN Fear & Greed",
       "name": "Fear & Greed",
       "status": "watch",
-      "interpretation": "极度恐惧，关注反向机会"
+      "interpretation": "极度恐惧，关注反向机会",
+      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
     },
     "hy_spread": {
       "series": "BAMLH0A0HYM2",
@@ -180,28 +190,29 @@
       "name": "高收益债利差",
       "unit": "%",
       "status": "watch",
-      "interpretation": "信用压力抬升"
+      "interpretation": "信用压力抬升",
+      "fetched_at": "2026-11-28T09:04:28.289574+00:00"
     },
     "rsp_spy": {
       "name": "RSP/SPY 市场广度",
       "latest": 0.2998407293497364,
       "previous": 0.30101855727640575,
-      "five_ago": null,
+      "five_ago": 0.2956263008646821,
       "one_day_pct": -0.3912808357485531,
-      "five_day_pct": null,
+      "five_day_pct": 1.4255932143816041,
       "one_day_change": -0.0011778279266693725,
-      "five_day_change": null,
+      "five_day_change": 0.004214428485054267,
       "source": "RSP / SPY"
     },
     "iwm_spy": {
       "name": "IWM/SPY 风险扩散",
       "latest": 0.37591992530755713,
       "previous": 0.37514999302358026,
-      "five_ago": null,
+      "five_ago": 0.3690893597999637,
       "one_day_pct": 0.20523318627077014,
-      "five_day_pct": null,
+      "five_day_pct": 1.8506535954586623,
       "one_day_change": 0.0007699322839768707,
-      "five_day_change": null,
+      "five_day_change": 0.006830565507593422,
       "source": "IWM / SPY"
     }
   },
@@ -210,17 +221,19 @@
     "tone": "watch",
     "action": "保持仓位纪律，先确认风险是否扩散到信用市场，再决定加仓或减仓。",
     "flags": [
-      "信用利差 5 日明显扩大",
-      "黄金和美债收益率同涨，偏通胀或货币信用压力"
+      "信用利差 5 日明显扩大"
     ],
     "positives": [
-      "Fear & Greed 处于极度恐惧"
+      "Fear & Greed 处于极度恐惧",
+      "RSP/SPY 走强，市场广度改善",
+      "IWM/SPY 走强，风险偏好扩散"
     ]
   },
   "errors": [],
   "notes": [
     "所有行情仅用于监测和辅助判断，不构成投资建议。",
-    "Yahoo/CNN/FRED/Stooq 等公共数据源可能延迟或短暂不可用。",
-    "VIX、ETF、美元、黄金和 10 年期美债使用 CNBC quote；高收益债利差使用 FRED BAMLH0A0HYM2。"
+    "CNBC/CNN/FRED 等公共数据源可能延迟或短暂不可用。",
+    "VIX、ETF、美元、黄金和 10 年期美债使用 CNBC quote；高收益债利差使用 FRED BAMLH0A0HYM2。",
+    "行情的 5 日变化按本项目每个交易日最后一次抓取的价格估算，不一定等于收市价。"
   ]
 }
