@@ -3,54 +3,77 @@ name: Update market snapshot and deploy Pages
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/30 * * * *"
+    # 避开整点和半点的排程高峰
+    - cron: "13,43 * * * *"
   push:
     branches:
       - main
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: read
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pages: read
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
+      # 所有数据源都失败时这一步会报错，线上保留上次部署（页面会显示过期提示）
       - name: Generate market snapshot
         run: |
           python3 cross_asset_dashboard.py --snapshot
           cp cross_asset_dashboard/market_snapshot.json market_snapshot.json
 
       - name: Commit snapshot
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "Update market snapshot"
-          file_pattern: market_snapshot.json cross_asset_dashboard/market_snapshot.json
+          file_pattern: market_snapshot.json market_history.json cross_asset_dashboard/market_snapshot.json
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: .
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.first.outputs.page_url || steps.retry.outputs.page_url }}
+    steps:
+      # 部署偶尔会暂时找不到刚上传的文件包，失败后等一阵再试一次
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        id: first
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: Wait before retry
+        if: steps.first.outcome == 'failure'
+        run: sleep 60
+
+      - name: Retry deploy
+        id: retry
+        if: steps.first.outcome == 'failure'
+        uses: actions/deploy-pages@v5
